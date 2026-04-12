@@ -9,3 +9,5 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' group-name ''
 
 setopt NO_CASE_GLOB
+
+compdef dot=git
