@@ -14,5 +14,6 @@ alias nd='fnm default'
 
 alias nvmrc='fnm use || fnm install'
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot-add='dot add -p'
 
 alias pkglist='pacman -Qqe > ~/.dotfiles/pkglist.txt'
