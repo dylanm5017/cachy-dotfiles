@@ -1,5 +1,5 @@
 alias ls='eza --icons'
-alias ll='eza -lah --icons'
+alias ll='eza -lah --icons --git'
 
 alias gs='git status'
 alias gc='git commit'
@@ -17,3 +17,9 @@ alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dot-add='dot add -p'
 
 alias pkglist='pacman -Qqe > ~/.dotfiles/pkglist.txt'
+alias ff='rg --files | fzf'
+alias proj='cd $(fd . ~/ -t d -d 3 | fzf)'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
