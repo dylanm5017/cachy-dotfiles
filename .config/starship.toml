@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$directory $git_branch | $time $nodejs $cmd_duration
+$directory$git_branch | $time $nodejs $cmd_duration
 $character
 """
 
@@ -23,7 +23,7 @@ format = "[$path]($style)"
 
 [git_branch]
 symbol = ""
-format = "| [$symbol $branch]($style) "
+format = " | [$symbol $branch]($style) "
 style = "mauve"
 
 [nodejs]
@@ -39,14 +39,14 @@ success_symbol = '[➜](bold green) '
 error_symbol = '[✗](bold red) '
 
 [cmd_duration]
-format = "[| 󱎫 $duration]($style)"
+format = "[| 󱎫  $duration]($style)"
 style = "overlay1"
 min_time = 3000
 
 
 [time]
 disabled = false
-format = "[ $time](sapphire) "
+format = "[  $time](sapphire) "
 time_format = "%R"
 
 # --- Palette Definitions ---

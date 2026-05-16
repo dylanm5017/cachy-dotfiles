@@ -1,0 +1,3 @@
+# name	host	remote_path	local_path	description
+liftbase	homeserver	/home/dylana/apps/liftbase	~/remote/liftbase	Liftbase app on home server
+taskbase	homeserver	/home/dylana/apps/taskbase	~/remote/taskbase	taskbase on homeserver
