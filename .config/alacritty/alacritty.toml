@@ -2,7 +2,7 @@
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.85
+opacity = 0.95
 dynamic_padding = true
 padding = { x = 12, y = 12 }
 decorations = "full"
@@ -39,4 +39,6 @@ save_to_clipboard = true
 
 [general]
 live_config_reload = true
-import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+# Smoky Plum terminal theme. Use alacritty-night.toml for Night, or switch
+# this path to alacritty-studio.toml for Studio.
+import = ["/home/dyl/.dotfiles/design-system/exports/terminal/alacritty-night.toml"]

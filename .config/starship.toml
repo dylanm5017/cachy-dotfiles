@@ -7,10 +7,17 @@ $character
 
 
 
-palette = "catppuccin_mocha"
+# Smoky Plum prompt roles:
+# - rose -> accent.rose; git branch and primary prompt symbol only.
+# - lavender -> accent.cool; directory/secondary structure.
+# - plum -> border.strong; subdued structural metadata.
+# - muted -> text.muted; low-emphasis time.
+# - success/error/warning/info -> diagnostic utility tokens.
+# Switch variants by changing this to "smoky_plum_studio".
+palette = "smoky_plum_night"
 
 [directory]
-style = "bold blue"
+style = "bold lavender"
 truncation_length = 3
 format = "[$path]($style)"
 
@@ -24,57 +31,75 @@ format = "[$path]($style)"
 [git_branch]
 symbol = ""
 format = " | [$symbol $branch]($style) "
-style = "mauve"
+style = "rose"
 
 [nodejs]
 format = "| [ $version]($style)"
-style = "green"
+style = "success"
 detect_files = ["package.json"]
 
 [line_break]
 disabled = true
 
 [character]
-success_symbol = '[➜](bold green) '
-error_symbol = '[✗](bold red) '
+success_symbol = '[➜](bold rose) '
+error_symbol = '[✗](bold error) '
 
 [cmd_duration]
 format = "[| 󱎫  $duration]($style)"
-style = "overlay1"
+style = "plum"
 min_time = 3000
 
 
 [time]
 disabled = false
-format = "[  $time](sapphire) "
+format = "[  $time](muted) "
 time_format = "%R"
 
 # --- Palette Definitions ---
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+# Smoky Plum Night — Starship palette
+# Set palette = "smoky_plum_night" in starship.toml to use this variant.
+# Role mapping:
+# rose -> accent.rose; git branch and primary prompt symbol
+# lavender -> accent.cool; secondary structure
+# plum -> border.strong; subdued structural text
+# text -> text.primary; default foreground
+# muted -> text.muted; low-emphasis metadata
+# success -> diagnostic.success; successful runtime status
+# warning -> diagnostic.warning; warning runtime status
+# error -> diagnostic.error; error runtime status
+# info -> diagnostic.info; informational runtime status
+[palettes.smoky_plum_night]
+rose = "#FF4A74"
+lavender = "#E9DDFF"
+plum = "#5A466E"
+text = "#FAF0E6"
+muted = "#8F8987"
+success = "#9BCB9D"
+warning = "#DDB879"
+error = "#FF6B8A"
+info = "#C9B7FF"
+
+# Smoky Plum Studio — Starship palette
+# Set palette = "smoky_plum_studio" in starship.toml to use this variant.
+# Role mapping:
+# rose -> accent.rose; git branch and primary prompt symbol
+# lavender -> accent.cool; secondary structure
+# plum -> border.strong; subdued structural text
+# text -> text.primary; default foreground
+# muted -> text.muted; low-emphasis metadata
+# success -> diagnostic.success; successful runtime status
+# warning -> diagnostic.warning; warning runtime status
+# error -> diagnostic.error; error runtime status
+# info -> diagnostic.info; informational runtime status
+[palettes.smoky_plum_studio]
+rose = "#F76A8C"
+lavender = "#DCCFFF"
+plum = "#2E2636"
+text = "#EDE4D8"
+muted = "#938C88"
+success = "#A0C99C"
+warning = "#D2AE78"
+error = "#F27A96"
+info = "#C9B9F4"
