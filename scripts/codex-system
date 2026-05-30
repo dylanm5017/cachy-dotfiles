@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+exec codex --cd "$HOME" \
+  --add-dir /etc \
+  --add-dir /usr/local \
+  --add-dir /usr/share \
+  "$@"

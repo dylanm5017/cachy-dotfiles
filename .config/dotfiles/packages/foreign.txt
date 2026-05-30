@@ -1,0 +1,4 @@
+bridge-utils
+catppuccin-gtk-theme-mocha
+slack-desktop-wayland
+teams-for-linux-bin

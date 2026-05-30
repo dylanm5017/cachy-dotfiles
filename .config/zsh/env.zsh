@@ -1,4 +1,4 @@
-export PATH="$HOME/.local/share/fnm:$PATH"
+export PATH="$HOME/scripts:$HOME/.local/bin:$HOME/.local/share/fnm:$PATH"
 
 if command -v fnm >/dev/null 2>&1; then
   # Pick up repo version files even when working in nested directories.
