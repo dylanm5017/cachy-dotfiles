@@ -1,26 +1,11 @@
-typeset -a _dyl_zsh_modules=(
-  history
-  options
-  completion
-  env
-  plugins
-  fzf
-  fzf-tools
-  aliases
-  git
-  node
-  projects
-  remote-projects
-  newproj
-  cockpit
-  audits
-  keybindings
-  exports
-)
+_dyl_zsh_init="$HOME/.config/zsh/init.zsh"
+[[ -r "$_dyl_zsh_init" ]] && source "$_dyl_zsh_init"
+unset _dyl_zsh_init
 
-for _dyl_zsh_module in "${_dyl_zsh_modules[@]}"; do
-  _dyl_zsh_file="$HOME/.config/zsh/${_dyl_zsh_module}.zsh"
-  [[ -r "$_dyl_zsh_file" ]] && source "$_dyl_zsh_file"
-done
+# BEGIN Smoky Plum managed fzf
+smoky_plum_fzf="${XDG_CONFIG_HOME:-$HOME/.config}/smoky-plum/fzf/current.sh"
+[ -r "$smoky_plum_fzf" ] && . "$smoky_plum_fzf"
+unset smoky_plum_fzf
+# END Smoky Plum managed fzf
 
-unset _dyl_zsh_file _dyl_zsh_module _dyl_zsh_modules
+# Secrets/credentials live in ~/.config/zsh/secrets.zsh (gitignored), sourced by init.zsh.

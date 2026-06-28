@@ -10,8 +10,13 @@
 !.config/zsh/*.zsh
 !.config/zsh/remote-projects.tsv
 .config/zsh/.codex
+.config/zsh/vendor/
 !.config/alacritty/
 !.config/alacritty/*.toml
+!.config/quickshell/
+!.config/quickshell/**
+!.config/hypr/
+!.config/hypr/**
 
 # Package managers and dependency folders
 node_modules/
