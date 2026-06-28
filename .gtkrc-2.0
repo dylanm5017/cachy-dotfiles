@@ -9,5 +9,6 @@ gtk-cursor-blink=1
 gtk-cursor-theme-size=24
 gtk-cursor-theme-name="Catppuccin-Mocha-Mauve-Cursors"
 gtk-sound-theme-name="freedesktop"
-gtk-icon-theme-name="Papirus-Dark"
+gtk-icon-theme-name="SmokyPlum-Folders"
 gtk-font-name="Iosevka Nerd Font,  12"
+

@@ -29,3 +29,5 @@ x-scheme-handler/https=firefox.desktop
 x-scheme-handler/mailto=org.mozilla.Thunderbird.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-P544F3.desktop
 x-scheme-handler/slack=slack.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/discord=vesktop.desktop

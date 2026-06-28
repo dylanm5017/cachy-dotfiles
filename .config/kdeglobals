@@ -24,7 +24,7 @@ IntensityEffect=0
 BackgroundAlternate=32,25,47
 BackgroundNormal=17,13,22
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=255,74,116
 ForegroundInactive=106,100,102
 ForegroundLink=233,221,255
@@ -32,13 +32,13 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:Complementary]
-BackgroundAlternate=17,13,22
+BackgroundAlternate=26,21,37
 BackgroundNormal=25,20,30
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=233,221,255
 ForegroundInactive=143,137,135
 ForegroundLink=233,221,255
@@ -46,13 +46,13 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:Header]
 BackgroundAlternate=25,20,30
 BackgroundNormal=17,13,22
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=255,74,116
 ForegroundInactive=143,137,135
 ForegroundLink=233,221,255
@@ -60,13 +60,13 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:Header][Inactive]
 BackgroundAlternate=17,13,22
 BackgroundNormal=10,11,18
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=233,221,255
 ForegroundInactive=106,100,102
 ForegroundLink=233,221,255
@@ -77,24 +77,24 @@ ForegroundPositive=155,203,157
 ForegroundVisited=143,137,135
 
 [Colors:Selection]
-BackgroundAlternate=42,31,63
-BackgroundNormal=76,38,71
+BackgroundAlternate=32,25,47
+BackgroundNormal=42,31,63
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
-ForegroundActive=233,221,255
+DecorationHover=130,71,111
+ForegroundActive=255,74,116
 ForegroundInactive=190,182,176
 ForegroundLink=233,221,255
 ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:Tooltip]
 BackgroundAlternate=25,20,30
 BackgroundNormal=17,13,22
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=233,221,255
 ForegroundInactive=143,137,135
 ForegroundLink=233,221,255
@@ -102,13 +102,13 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:View]
-BackgroundAlternate=17,13,22
+BackgroundAlternate=26,21,37
 BackgroundNormal=18,15,23
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=233,221,255
 ForegroundInactive=143,137,135
 ForegroundLink=233,221,255
@@ -116,13 +116,13 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [Colors:Window]
 BackgroundAlternate=17,13,22
 BackgroundNormal=10,11,18
 DecorationFocus=255,74,116
-DecorationHover=233,221,255
+DecorationHover=26,21,37
 ForegroundActive=255,74,116
 ForegroundInactive=143,137,135
 ForegroundLink=233,221,255
@@ -130,11 +130,11 @@ ForegroundNegative=255,107,138
 ForegroundNeutral=221,184,121
 ForegroundNormal=250,240,230
 ForegroundPositive=155,203,157
-ForegroundVisited=255,74,116
+ForegroundVisited=215,205,245
 
 [General]
 ColorScheme=SmokyPlumNight
-ColorSchemeHash=1e791a601596b04821e81de9e9f6f2c50005d730
+ColorSchemeHash=c9d4d42d66145718322d8b97f951ad2a578c2122
 LastUsedCustomAccentColor=105,96,176
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
@@ -148,7 +148,7 @@ smallestReadableFont=Iosevka NF,11,-1,5,800,0,0,0,0,0,0,0,0,0,0,1,Regular
 toolBarFont=Iosevka Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
-Theme=Papirus-Dark
+Theme=SmokyPlum-Folders
 
 [KDE]
 AnimationDurationFactor=0.25

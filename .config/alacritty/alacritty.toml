@@ -41,4 +41,4 @@ save_to_clipboard = true
 live_config_reload = true
 # Smoky Plum terminal theme. Use alacritty-night.toml for Night, or switch
 # this path to alacritty-studio.toml for Studio.
-import = ["/home/dyl/.dotfiles/design-system/exports/terminal/alacritty-night.toml"]
+import = ["/home/dyl/Projects/design-system/exports/terminal/alacritty-night.toml", "~/.config/alacritty/themes/smoky-plum-night.toml"]
