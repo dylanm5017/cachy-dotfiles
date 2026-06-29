@@ -1,9 +1,0 @@
-singleton Motion 1.0 Motion.qml
-IconButton 1.0 IconButton.qml
-RevealText 1.0 RevealText.qml
-StatusPill 1.0 StatusPill.qml
-SectionLabel 1.0 SectionLabel.qml
-SurfacePanel 1.0 SurfacePanel.qml
-ListRow 1.0 ListRow.qml
-ToggleTile 1.0 ToggleTile.qml
-SliderRow 1.0 SliderRow.qml
