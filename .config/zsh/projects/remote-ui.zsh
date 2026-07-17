@@ -1,10 +1,10 @@
 _rproj_action_for_key() {
   case "$1" in
-    ctrl-e) print -r -- 'cd' ;;
+    ctrl-e) print -r -- 'code' ;;
     ctrl-n) print -r -- 'nvim' ;;
     ctrl-s) print -r -- 'status' ;;
     ctrl-u) print -r -- 'unmount' ;;
-    *) print -r -- 'code' ;;
+    *) print -r -- 'cd' ;;
   esac
 }
 
@@ -38,7 +38,7 @@ _rproj_select() {
           --delimiter=$'\t' \
           --with-nth=1 \
           --nth=1,3,5,6,7 \
-          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE          HOST              NOTE\nenter code | ^e cd | ^n nvim | ^s status | ^u unmount' \
+          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE          HOST              NOTE\nenter cd | ^e code | ^n nvim | ^s status | ^u unmount' \
           --preview="$preview" \
           --preview-window='right,60%,border-left' \
           --query="$query"

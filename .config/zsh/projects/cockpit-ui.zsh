@@ -215,7 +215,7 @@ EOF
 
 _cockpit_action_for_key() {
   case "$1" in
-    ctrl-e) print -r -- 'cd' ;;
+    ctrl-e) print -r -- 'code' ;;
     ctrl-n) print -r -- 'nvim' ;;
     ctrl-t) print -r -- 'terminal' ;;
     ctrl-o) print -r -- 'open' ;;
@@ -227,7 +227,7 @@ _cockpit_action_for_key() {
     ctrl-f) print -r -- 'yazi' ;;
     ctrl-x) print -r -- 'mount' ;;
     ctrl-u) print -r -- 'unmount' ;;
-    *) print -r -- 'code' ;;
+    *) print -r -- 'cd' ;;
   esac
 }
 
@@ -261,7 +261,7 @@ _cockpit_select() {
           --delimiter=$'\t' \
           --with-nth=1 \
           --nth=1,3,5,6,7 \
-          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE             GROUP             TAGS\nenter code | ^e cd | ^n nvim | ^t term | ^o files | ^f yazi | ^r script | ^d dev | ^g github | ^y notes | ^x mount | ^u unmount | ^s status' \
+          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE             GROUP             TAGS\nenter cd | ^e code | ^n nvim | ^t term | ^o files | ^f yazi | ^r script | ^d dev | ^g github | ^y notes | ^x mount | ^u unmount | ^s status' \
           --preview="$preview" \
           --preview-window='right,60%,border-left' \
           --query="$query"

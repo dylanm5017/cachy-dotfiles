@@ -30,10 +30,11 @@ _cockpit_kind_filter_for_action() {
 }
 
 cockpit() {
-  local action requested_action query selection selected_action row kind_filter
+  local action first query selection selected_action row kind_filter
   local -a matches
 
-  action='code'
+  action='cd'
+  local first="$1"
 
   case "$1" in
     --cd)
@@ -107,7 +108,6 @@ cockpit() {
       ;;
   esac
 
-  requested_action="$action"
   query="$*"
   kind_filter="$(_cockpit_kind_filter_for_action "$action")"
 
@@ -130,7 +130,7 @@ cockpit() {
     fi
 
     if (( ${#matches[@]} == 1 )); then
-      _cockpit_open code "${matches[1]}"
+      _cockpit_open cd "${matches[1]}"
       return
     fi
 
@@ -148,7 +148,7 @@ cockpit() {
     [[ -z "$selection" ]] && return 0
 
     selected_action="${selection%%$'\t'*}"
-    [[ "$requested_action" == 'code' ]] && action="$selected_action"
+    [[ "$first" != -* ]] && action="$selected_action"
     row="${selection#*$'\t'}"
     _cockpit_open "$action" "$row"
     return
@@ -170,7 +170,7 @@ cockpit() {
   [[ -z "$selection" ]] && return 0
 
   selected_action="${selection%%$'\t'*}"
-  [[ "$requested_action" == 'code' ]] && action="$selected_action"
+  [[ "$first" != -* ]] && action="$selected_action"
   row="${selection#*$'\t'}"
   _cockpit_open "$action" "$row"
 }

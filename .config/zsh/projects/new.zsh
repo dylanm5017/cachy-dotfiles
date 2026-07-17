@@ -53,11 +53,7 @@ _newproj_finish() {
   fi
 
   cd -- "$project_dir" || return
-  if command -v code >/dev/null 2>&1; then
-    code .
-  else
-    print -u2 'code is not installed or not on PATH'
-  fi
+  print -r -- "created $project_dir (run 'code .' to open in the editor)"
 }
 
 newproj() {

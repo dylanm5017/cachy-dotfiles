@@ -128,7 +128,7 @@ _cockpit_select_recent() {
           --delimiter=$'\t' \
           --with-nth=1 \
           --nth=1,3,5,6,7 \
-          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE             GROUP             TAGS\nenter code | ^e cd | ^n nvim | ^t term | ^o files | ^f yazi | ^r script | ^d dev | ^g github | ^y notes | ^s status' \
+          --header=$'TYPE  PROJECT                       STATE     BRANCH / REMOTE             GROUP             TAGS\nenter cd | ^e code | ^n nvim | ^t term | ^o files | ^f yazi | ^r script | ^d dev | ^g github | ^y notes | ^s status' \
           --preview="$preview" \
           --preview-window='right,60%,border-left' \
           --query="$query"

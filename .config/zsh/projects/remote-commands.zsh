@@ -182,10 +182,11 @@ EOF
 }
 
 rproj() {
-  local action requested_action query selection row project_name selected_action
+  local action first query selection row project_name selected_action
   local -a matches
 
-  action='code'
+  action='cd'
+  first="$1"
 
   case "$1" in
     --cd)
@@ -219,7 +220,6 @@ rproj() {
       ;;
   esac
 
-  requested_action="$action"
   query="$*"
 
   if [[ "$action" == 'status' && -z "$query" ]]; then
@@ -247,7 +247,7 @@ rproj() {
     [[ -z "$selection" ]] && return 0
 
     selected_action="${selection%%$'\t'*}"
-    [[ "$requested_action" == 'code' ]] && action="$selected_action"
+    [[ "$first" != -* ]] && action="$selected_action"
     project_name="${selection#*$'\t'}"
     matches=("${(@f)$(_rproj_matches "$project_name")}")
   else
@@ -264,7 +264,7 @@ rproj() {
     [[ -z "$selection" ]] && return 0
 
     selected_action="${selection%%$'\t'*}"
-    [[ "$requested_action" == 'code' ]] && action="$selected_action"
+    [[ "$first" != -* ]] && action="$selected_action"
     project_name="${selection#*$'\t'}"
     matches=("${(@f)$(_rproj_matches "$project_name")}")
   fi

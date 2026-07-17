@@ -108,11 +108,11 @@ _project_candidates() {
 
 _project_action_for_key() {
   case "$1" in
-    ctrl-e) print -r -- 'cd' ;;
+    ctrl-e) print -r -- 'code' ;;
     ctrl-n) print -r -- 'nvim' ;;
     ctrl-t) print -r -- 'terminal' ;;
     ctrl-o) print -r -- 'open' ;;
-    *) print -r -- 'code' ;;
+    *) print -r -- 'cd' ;;
   esac
 }
 
@@ -145,7 +145,7 @@ _project_select() {
           --delimiter=$'\t' \
           --with-nth=1 \
           --nth=1,3,5,6,7 \
-          --header=$'TYPE  PROJECT                       STATE     BRANCH                    GROUP             TAGS\nenter code | ^e cd | ^n nvim | ^t term | ^o files' \
+          --header=$'TYPE  PROJECT                       STATE     BRANCH                    GROUP             TAGS\nenter cd | ^e code | ^n nvim | ^t term | ^o files' \
           --preview="$preview" \
           --preview-window='right,60%,border-left' \
           --query="$query"
@@ -271,7 +271,7 @@ proj() {
 
   if (( ${#matches[@]} == 1 )); then
     project_path="${matches[1]##*$'\t'}"
-    _project_open code "$project_path"
+    _project_open cd "$project_path"
     return
   fi
 

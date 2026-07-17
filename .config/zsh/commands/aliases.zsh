@@ -40,7 +40,6 @@ conf() {
 
   dir="${selection##*$'\t'}"
   cd -- "$dir"
-  code "$dir"
 }
 
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
@@ -79,6 +78,12 @@ dps() {
   docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 }
 
+clearff() {
+  clear
+  fastfetch
+}
+
+alias clear='clearff'
 alias di='docker images'
 
 alias rm='rm -i'
