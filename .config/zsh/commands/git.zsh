@@ -7,6 +7,13 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gco='git switch'
 
+alias ga='git add'
+alias gaa='git add -A'
+alias gcm='git commit -m'
+alias gpu='git push'
+alias gpuf='git push --force-with-lease'
+alias gpo='git push -u origin HEAD'
+
 _git_branch_rows() {
   local branch sha age scope color current display
 

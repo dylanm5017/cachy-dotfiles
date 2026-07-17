@@ -12,6 +12,7 @@ typeset -a _dyl_zsh_modules=(
   commands/yazi.zsh
   commands/git.zsh
   commands/node.zsh
+  commands/pacman.zsh
   projects/local.zsh
   projects/remote-data.zsh
   projects/cockpit-model.zsh

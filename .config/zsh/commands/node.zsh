@@ -66,3 +66,88 @@ noutdated() {
 
 alias no='noutdated'
 alias nout='noutdated'
+
+# nr — run a package.json script from the current directory.
+#   nr                -> fzf-pick a script and run it
+#   nr <script> ...   -> npm run <script> (extra args forwarded after --)
+nr() {
+  if ! command -v npm >/dev/null 2>&1; then
+    print -u2 'npm not found'
+    return 1
+  fi
+
+  if [[ ! -f package.json ]]; then
+    print -u2 'no package.json in the current directory'
+    return 1
+  fi
+
+  local script
+
+  if (( $# )); then
+    script="$1"
+    shift
+    if (( $# )); then
+      npm run "$script" -- "$@"
+    else
+      npm run "$script"
+    fi
+    return $?
+  fi
+
+  if ! command -v fzf >/dev/null 2>&1 || ! command -v jq >/dev/null 2>&1; then
+    print -u2 'scripts (install fzf and jq for the picker):'
+    npm run
+    return $?
+  fi
+
+  local rows selected name command display
+
+  rows="$(
+    jq -r '.scripts // {} | to_entries[] | [.key, .value] | @tsv' package.json 2>/dev/null
+  )"
+
+  if [[ -z "$rows" ]]; then
+    print 'no scripts defined in package.json'
+    return 0
+  fi
+
+  selected="$(
+    print -r -- "$rows" \
+      | while IFS=$'\t' read -r name command; do
+          display="$(_fzf_ansi '1' "$(_fzf_pad "$name" 28)")  $(_fzf_ansi '2' "$(_fzf_truncate "$command" 60)")"
+          print -r -- "$display"$'\t'"$name"$'\t'"$command"
+        done \
+      | fzf \
+          --ansi \
+          --prompt='npm run> ' \
+          --height=70% \
+          --layout=reverse \
+          --border \
+          --header=$'SCRIPT                        COMMAND\nenter runs the selected script' \
+          --delimiter=$'\t' \
+          --with-nth=1 \
+          --nth=1,3 \
+          --preview=$'printf "Script\n  %s\n\nCommand\n  %s\n" {2} {3}' \
+          --preview-window='right,50%,border-left'
+  )" || return
+
+  [[ -z "$selected" ]] && return 0
+
+  script="$(print -r -- "$selected" | awk -F '\t' '{print $2}')"
+  print -r -- "npm run $script"
+  npm run "$script"
+}
+
+_nr() {
+  local -a scripts
+
+  [[ -f package.json ]] || return
+  command -v jq >/dev/null 2>&1 || return
+
+  scripts=("${(@f)$(jq -r '.scripts // {} | keys[]' package.json 2>/dev/null)}")
+  (( ${#scripts[@]} )) && _describe -t npm-scripts 'script' scripts
+}
+
+if (( $+functions[compdef] )); then
+  compdef _nr nr
+fi
