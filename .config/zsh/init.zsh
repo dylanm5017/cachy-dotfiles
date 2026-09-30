@@ -13,6 +13,9 @@ typeset -a _dyl_zsh_modules=(
   commands/git.zsh
   commands/node.zsh
   commands/pacman.zsh
+  commands/github.zsh
+  commands/dusk.zsh
+  commands/cheat.zsh
   projects/local.zsh
   projects/remote-data.zsh
   projects/cockpit-model.zsh
@@ -40,3 +43,5 @@ _dyl_zsh_secrets="$_dyl_zsh_dir/secrets.zsh"
 [[ -r "$_dyl_zsh_secrets" ]] && source "$_dyl_zsh_secrets"
 
 unset _dyl_zsh_file _dyl_zsh_module _dyl_zsh_modules _dyl_zsh_dir _dyl_zsh_secrets
+
+command -v fastfetch &>/dev/null && fastfetch

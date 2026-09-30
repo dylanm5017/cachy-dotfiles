@@ -35,6 +35,19 @@ if [ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substrin
   source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
+# auto-close matching (), [], "", '' — self-inits after other widgets, so load before highlighting.
+if [ -f /usr/share/zsh/plugins/zsh-autopair/autopair.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
+fi
+
+# remind me to use an alias when I type the long form of a command.
+if [ -f /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh ]; then
+  export YSU_MESSAGE_POSITION='after'
+  export YSU_MODE='ALL'
+  source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+fi
+
+# syntax highlighting must be sourced last.
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi

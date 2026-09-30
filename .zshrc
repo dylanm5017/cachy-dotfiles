@@ -9,3 +9,4 @@ unset smoky_plum_fzf
 # END Smoky Plum managed fzf
 
 # Secrets/credentials live in ~/.config/zsh/secrets.zsh (gitignored), sourced by init.zsh.
+export PATH=$PATH:/home/dyl/.spicetify

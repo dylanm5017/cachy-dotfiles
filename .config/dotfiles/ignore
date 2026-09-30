@@ -13,6 +13,8 @@
 .config/zsh/vendor/
 !.config/alacritty/
 !.config/alacritty/*.toml
+!.config/fastfetch/
+!.config/fastfetch/**
 !.config/quickshell/
 !.config/quickshell/**
 !.config/hypr/

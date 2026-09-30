@@ -56,6 +56,7 @@ _newproj_finish() {
   print -r -- "created $project_dir (run 'code .' to open in the editor)"
 }
 
+# newproj — scaffold a new project in ~/Projects
 newproj() {
   local project_name projects_dir project_dir template node_version version
   local compatible_versions installed_versions

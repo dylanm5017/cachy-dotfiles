@@ -1,3 +1,4 @@
+# rproj-status — show mount state for remote projects
 rproj-status() {
   case "$1" in
     --mounted|-m)
@@ -23,6 +24,7 @@ EOF
 }
 
 alias rps='rproj-status'
+# rproj-unmount — unmount a remote project
 rproj-unmount() {
   local mode query selection row mounted_rows
   local -a matches mounted
@@ -103,6 +105,7 @@ default local path is ~/remote/<name>.
 EOF
 }
 
+# rproj-add — register a new remote project
 rproj-add() {
   local config name host remote_path local_path description existing
 
@@ -181,6 +184,7 @@ Without a project name, rproj opens an fzf picker.
 EOF
 }
 
+# rproj — mount and open a remote project
 rproj() {
   local action first query selection row project_name selected_action
   local -a matches

@@ -1,5 +1,5 @@
-/* Smoky Plum Night — GTK 4.0 color bridge */
-/* Generated from tokens/smoky-plum.tokens.json v0.1.0; do not edit by hand. */
+/* Smoky Plum High Contrast — GTK 4.0 color bridge */
+/* Generated from tokens/smoky-plum/smoky-plum.tokens.json v0.8.0; do not edit by hand. */
 /* Color bridge only: lightweight aliases and shallow state hooks, not a full widget theme. */
 /* Role mapping:
  * @theme_bg_color -> base.background; GTK root/background alias
@@ -15,15 +15,15 @@
  * @warning_color -> diagnostic.warning; warning status
  * @error_color -> diagnostic.error; error status
  * @success_color -> diagnostic.success; success status
- * @accent_bg_color -> accent.rose; restrained active/focus accent
+ * @accent_bg_color -> accent.primary; restrained active/focus accent
  * @accent_fg_color -> text.onAccent; text on active accent
- * @accent_color -> accent.rose; restrained focus accent
+ * @accent_color -> accent.primary; restrained focus accent
  * @smoky_plum_background -> base.background; Smoky Plum root
  * @smoky_plum_editor -> base.editor; Smoky Plum content surface
  * @smoky_plum_panel -> base.panel; Smoky Plum window/card surface
  * @smoky_plum_sidebar -> base.sidebar; Smoky Plum sidebar surface
  * @smoky_plum_text_muted -> text.muted; low-emphasis text
- * @smoky_plum_accent_secondary -> accent.cool; secondary accent
+ * @smoky_plum_accent_secondary -> accent.secondary; secondary accent
  * window, .background background-color -> base.background
  * window, .background color -> text.primary
  * .view, textview text background-color -> base.editor
@@ -39,77 +39,77 @@
  * button:hover, row:hover background-color -> surface.hover
  * button:checked, button:active background-color -> surface.active
  * button:checked, button:active color -> text.primary
- * button:checked, button:active border-color -> accent.rose
+ * button:checked, button:active border-color -> accent.primary
  * selection, *:selected background-color -> highlight.background
  * selection, *:selected color -> text.primary
  * *:disabled color -> text.disabled
- * *:focus outline-color -> accent.rose
- * *:focus border-color -> accent.rose
+ * *:focus outline-color -> accent.primary
+ * *:focus border-color -> accent.primary
  */
 
-@define-color theme_bg_color #0A0B12;
-@define-color theme_fg_color #FAF0E6;
-@define-color theme_base_color #120F17;
-@define-color theme_text_color #FAF0E6;
-@define-color theme_selected_bg_color #2A1F3F;
-@define-color theme_selected_fg_color #FAF0E6;
-@define-color insensitive_bg_color #110D16;
+@define-color theme_bg_color #08070E;
+@define-color theme_fg_color #FFF7EF;
+@define-color theme_base_color #100C16;
+@define-color theme_text_color #FFF7EF;
+@define-color theme_selected_bg_color #33264C;
+@define-color theme_selected_fg_color #FFF7EF;
+@define-color insensitive_bg_color #0E0B13;
 @define-color insensitive_fg_color #6A6466;
-@define-color borders #4A385A;
-@define-color unfocused_borders #31263C;
-@define-color warning_color #DDB879;
-@define-color error_color #FF6B8A;
-@define-color success_color #9BCB9D;
+@define-color borders #735D8C;
+@define-color unfocused_borders #3A2E48;
+@define-color warning_color #E8C88C;
+@define-color error_color #FF8299;
+@define-color success_color #ADD8AE;
 @define-color accent_bg_color #FF4A74;
 @define-color accent_fg_color #140A10;
 @define-color accent_color #FF4A74;
-@define-color smoky_plum_background #0A0B12;
-@define-color smoky_plum_editor #120F17;
-@define-color smoky_plum_panel #110D16;
-@define-color smoky_plum_sidebar #19141E;
-@define-color smoky_plum_text_muted #8F8987;
-@define-color smoky_plum_accent_secondary #E9DDFF;
+@define-color smoky_plum_background #08070E;
+@define-color smoky_plum_editor #100C16;
+@define-color smoky_plum_panel #0E0B13;
+@define-color smoky_plum_sidebar #17121F;
+@define-color smoky_plum_text_muted #B0A9A3;
+@define-color smoky_plum_accent_secondary #EFE4FF;
 
 window, .background {
-  background-color: #0A0B12;
-  color: #FAF0E6;
+  background-color: #08070E;
+  color: #FFF7EF;
 }
 
 .view, textview text {
-  background-color: #120F17;
-  color: #FAF0E6;
+  background-color: #100C16;
+  color: #FFF7EF;
 }
 
 popover, menu, .popover, .menu {
-  background-color: #110D16;
-  color: #FAF0E6;
-  border-color: #4A385A;
+  background-color: #0E0B13;
+  color: #FFF7EF;
+  border-color: #735D8C;
 }
 
 .sidebar {
-  background-color: #19141E;
-  color: #BEB6B0;
+  background-color: #17121F;
+  color: #DCD5CD;
 }
 
 button, entry {
-  background-color: #110D16;
-  color: #FAF0E6;
-  border-color: #4A385A;
+  background-color: #0E0B13;
+  color: #FFF7EF;
+  border-color: #735D8C;
 }
 
 button:hover, row:hover {
-  background-color: #1A1525;
+  background-color: #191325;
 }
 
 button:checked, button:active {
-  background-color: #20192F;
-  color: #FAF0E6;
+  background-color: #221A33;
+  color: #FFF7EF;
   border-color: #FF4A74;
 }
 
 selection, *:selected {
-  background-color: #2A1F3F;
-  color: #FAF0E6;
+  background-color: #33264C;
+  color: #FFF7EF;
 }
 
 *:disabled {
@@ -120,4 +120,5 @@ selection, *:selected {
   outline-color: #FF4A74;
   border-color: #FF4A74;
 }
+
 @import 'colors.css';

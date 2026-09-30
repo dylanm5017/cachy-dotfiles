@@ -11,3 +11,10 @@ if command -v fnm >/dev/null 2>&1; then
   fi
   unset fnm_env
 fi
+
+# Interactive editor. Unset until now, so `git commit` without -m fell back to vi
+# and the ${EDITOR:-nvim} guards in lib/fzf.zsh and projects/ never had a value.
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+fi

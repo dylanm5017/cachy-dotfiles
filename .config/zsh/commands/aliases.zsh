@@ -14,6 +14,7 @@ fi
 alias ll='eza -lah --icons --git'
 alias h='tldr'
 
+# conf — jump to a config directory under ~/.config
 conf() {
   local entries selection dir
 
@@ -57,6 +58,7 @@ alias dot-add='dot add -p'
 alias ubuntu='ssh dylana@192.168.1.17'
 alias ub='ssh dylana@192.168.1.17'
 
+# pkglist — snapshot explicit and AUR package lists into the dotfiles repo
 pkglist() {
   local package_dir
 
@@ -70,12 +72,14 @@ pkglist() {
   print -r -- "updated $package_dir/foreign.txt"
 }
 
+# mkcd — create a directory and cd into it
 mkcd() {
   [[ -z "$1" ]] && return 1
 
   mkdir -p -- "$1" && cd -- "$1"
 }
 
+# tmpcd — create a scratch directory and cd into it
 tmpcd() {
   local dir
 
@@ -83,10 +87,14 @@ tmpcd() {
   cd -- "$dir"
 }
 
+# dps — list running docker containers as a compact table
 dps() {
   docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 }
 
+command -v lazydocker >/dev/null 2>&1 && alias lzd='lazydocker'
+
+# clearff — clear the screen and redraw the fastfetch banner
 clearff() {
   clear
   fastfetch
@@ -94,3 +102,56 @@ clearff() {
 
 alias clear='clearff'
 alias di='docker images'
+
+# Directory stack. AUTO_PUSHD is on in core/options.zsh, so every cd already
+# records where you were — these make that stack visible and reachable.
+# Plain `..` needs no alias: AUTO_CD handles it.
+alias d='dirs -v'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# dp — jump back to a directory visited earlier in this shell session.
+# zoxide covers frecency across sessions; this covers where you have actually been.
+dp() {
+  local rows selected index dir display
+
+  if ! command -v fzf >/dev/null 2>&1; then
+    dirs -v
+    return
+  fi
+
+  rows="$(dirs -lv)"
+
+  if [[ -z "$rows" ]]; then
+    print 'directory stack is empty'
+    return 0
+  fi
+
+  selected="$(
+    print -r -- "$rows" \
+      | while IFS=$'\t' read -r index dir; do
+          [[ -z "$dir" ]] && continue
+          display="$(_fzf_ansi '36' "$(_fzf_pad "$index" 4)")  $(_fzf_ansi '1' "$(_fzf_truncate "$dir" 72)")"
+          print -r -- "$display"$'\t'"$dir"
+        done \
+      | fzf \
+          --ansi \
+          --prompt='dir> ' \
+          --height=40% \
+          --layout=reverse \
+          --border \
+          --delimiter=$'\t' \
+          --with-nth=1 \
+          --nth=1,2 \
+          --header=$'#     DIRECTORY\nenter cd' \
+          --preview='eza -la --icons --git --color=always {2} 2>/dev/null || ls -la {2} 2>/dev/null' \
+          --preview-window='right,55%,border-left' \
+          --query="${1:-}"
+  )" || return
+
+  [[ -z "$selected" ]] && return 0
+
+  dir="${selected#*$'\t'}"
+  cd -- "$dir"
+}

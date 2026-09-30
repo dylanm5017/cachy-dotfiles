@@ -1,3 +1,4 @@
+# projects — cd to ~/Projects
 projects() {
   cd -- "$HOME/Projects"
 }
@@ -246,6 +247,7 @@ _project_open() {
   esac
 }
 
+# proj — fuzzy-pick a local project and open it
 proj() {
   local query selection action project_path
   local -a matches

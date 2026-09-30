@@ -29,6 +29,7 @@ _cockpit_kind_filter_for_action() {
   esac
 }
 
+# cockpit — unified local and remote project launcher
 cockpit() {
   local action first query selection selected_action row kind_filter
   local -a matches

@@ -14,6 +14,8 @@ alias gpu='git push'
 alias gpuf='git push --force-with-lease'
 alias gpo='git push -u origin HEAD'
 
+command -v lazygit >/dev/null 2>&1 && alias lg='lazygit'
+
 _git_branch_rows() {
   local branch sha age scope color current display
 
@@ -38,6 +40,7 @@ _git_branch_rows() {
       done
 }
 
+# gbs — fuzzy-pick a local or remote branch and switch to it
 gbs() {
   local selected local_branch
 

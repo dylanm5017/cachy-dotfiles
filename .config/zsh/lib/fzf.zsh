@@ -79,6 +79,7 @@ _fzf_file_rows() {
   done
 }
 
+# ftext — search file contents with rga and print the matching file path
 ftext() {
   local query selected
 
@@ -113,6 +114,7 @@ ftext() {
   print -r -- "$selected"
 }
 
+# ff — fuzzy-pick a file in the current tree and print its path
 ff() {
   local selected
 
@@ -137,6 +139,7 @@ ff() {
   [[ -n "$selected" ]] && print -r -- "$selected"
 }
 
+# fe — fuzzy-pick a file and open it in $EDITOR
 fe() {
   local selected
 

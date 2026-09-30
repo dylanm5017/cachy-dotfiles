@@ -1,6 +1,7 @@
 # Package management shortcuts (Arch / pacman / paru).
 # Install, update, and search prefer paru (AUR-aware) and fall back to pacman.
 
+# pi — install packages, preferring paru over pacman
 pi() {
   if command -v paru >/dev/null 2>&1; then
     paru -S "$@"
@@ -9,6 +10,7 @@ pi() {
   fi
 }
 
+# pup — upgrade all packages, preferring paru over pacman
 pup() {
   if command -v paru >/dev/null 2>&1; then
     paru -Syu "$@"
@@ -17,6 +19,7 @@ pup() {
   fi
 }
 
+# pss — search packages, preferring paru over pacman
 pss() {
   if command -v paru >/dev/null 2>&1; then
     paru -Ss "$@"
@@ -29,6 +32,7 @@ alias prm='sudo pacman -Rns'
 alias pin='pacman -Si'
 alias pql='pacman -Q'
 
+# porphans — list orphaned packages and offer to remove them
 porphans() {
   local orphans
 

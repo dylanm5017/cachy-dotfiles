@@ -3,6 +3,7 @@ alias nv='fnm use'
 alias nd='fnm default'
 alias nvmrc='fnm use || fnm install'
 
+# noutdated — fuzzy-browse outdated npm packages and print the upgrade command
 noutdated() {
   if ! command -v npm >/dev/null 2>&1; then
     print -u2 'npm not found'

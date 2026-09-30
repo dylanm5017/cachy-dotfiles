@@ -23,6 +23,7 @@ _audit_section() {
   print -r -- "${(l:${#1}::-:)}"
 }
 
+# pacman-cache-plan — report pacman cache size and print prune commands; deletes nothing
 pacman-cache-plan() {
   _audit_section 'Pacman cache policy'
   print -r -- "Current cache: $(_audit_bytes /var/cache/pacman/pkg)"
@@ -36,6 +37,7 @@ pacman-cache-plan() {
   print -r -- 'This helper does not delete anything.'
 }
 
+# system-audit — system health, package, storage and service report
 system-audit() {
   local orphans foreign errors docker_status boot_size root_size home_size pacman_cache downloads_size trash_size steam_size
 
@@ -122,6 +124,7 @@ _dev_package_manager() {
   fi
 }
 
+# devhealth — runtime, project, tooling and cache report for the current directory
 devhealth() {
   local docker_status package_manager git_state
 
@@ -189,6 +192,7 @@ _theme_read_ini() {
   awk -F= -v key="$key" '$1 == key {print $2; found=1} END {if (!found) print "-"}' "$file"
 }
 
+# theme-audit — report KDE, Kvantum, GTK and terminal theme alignment
 theme-audit() {
   local kdeglobals gtk3 gtk4 kvantum alacritty
 
