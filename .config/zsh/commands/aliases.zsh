@@ -1,8 +1,17 @@
-alias ls='eza --icons'
-alias ll='eza -lah --icons --git'
+# Aliases that swap or change a standard command are skipped inside Claude Code
+# (which sets CLAUDECODE=1): its shell loads this file, and `rm -i` / `mv -i`
+# hang waiting for a y/n no one can type, while rg and bat take different flags
+# and output than the grep and cat that commands are written for.
+if [[ -z $CLAUDECODE ]]; then
+  alias ls='eza --icons'
+  alias grep='rg'
+  alias cat='bat'
+  alias rm='rm -i'
+  alias cp='cp -i'
+  alias mv='mv -i'
+fi
 
-alias grep='rg'
-alias cat='bat'
+alias ll='eza -lah --icons --git'
 alias h='tldr'
 
 conf() {
@@ -85,7 +94,3 @@ clearff() {
 
 alias clear='clearff'
 alias di='docker images'
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
